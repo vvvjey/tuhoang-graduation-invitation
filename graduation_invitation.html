@@ -1,0 +1,1934 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduation Invitation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --bg-color: #f5f6fa;
+            --card-bg: white;
+            --gold: #f1c40f;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            font-weight: 400;
+            line-height: 1.6;
+            letter-spacing: 0.3px;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: var(--secondary-color);
+            transition: all 0.3s ease;
+            background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            cursor: none; /* Hide default cursor */
+        }
+        
+        .invitation {
+            background-color: var(--card-bg);
+            width: 90%;
+            max-width: 800px;
+            padding: 50px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            margin: 80px auto 30px;
+            backdrop-filter: blur(10px);
+            animation: businessFadeIn 1.5s ease-out;
+            cursor: none;
+            overflow: hidden;
+        }
+
+        .invitation::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(
+                circle at center,
+                rgba(255, 255, 255, 0.1) 0%,
+                transparent 60%
+            );
+            animation: rotate 20s linear infinite;
+            pointer-events: none;
+        }
+
+        .invitation::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                45deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.1) 50%,
+                transparent 100%
+            );
+            animation: shine 3s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%); }
+            100% { transform: translateX(100%) translateY(100%); }
+        }
+        
+        .heading {
+            font-family: var(--font-heading);
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: 12px;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            animation: widthGrow 1.5s ease-out forwards;
+        }
+
+        @keyframes widthGrow {
+            from { width: 0; }
+            to { width: 150px; }
+        }
+        
+        .year {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 40px 0;
+        }
+        
+        .year span {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            padding: 0 20px;
+            color: var(--primary-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .cap-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 15px;
+            color: var(--gold);
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .graduate-name {
+            font-family: var(--font-heading);
+            font-size: 48px;
+            font-weight: 600;
+            margin: 30px 0;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            display: inline-block;
+        }
+
+        .graduate-name::before,
+        .graduate-name::after {
+            content: '❖';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold);
+            font-size: 24px;
+            opacity: 0.8;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .graduate-name::before {
+            left: -40px;
+        }
+
+        .graduate-name::after {
+            right: -40px;
+        }
+        
+        .school {
+            font-family: var(--font-body);
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            line-height: 1.6;
+            letter-spacing: 0.5px;
+        }
+        
+        .major-info {
+            margin: 20px 0;
+            padding: 30px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .major-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                45deg,
+                transparent 0%,
+                rgba(255,255,255,0.2) 50%,
+                transparent 100%
+            );
+            transform: translateX(-100%);
+            animation: shine 3s infinite;
+        }
+
+        .major {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .specialization {
+            font-family: var(--font-body);
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--accent-color);
+            letter-spacing: 0.5px;
+        }
+        
+        .divider {
+            border: none;
+            height: 1px;
+            background: linear-gradient(
+                to right,
+                transparent,
+                var(--gold),
+                transparent
+            );
+            margin: 40px auto;
+            width: 80%;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '❖';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--card-bg);
+            padding: 0 20px;
+            color: var(--gold);
+            font-size: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .date-time {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 500;
+            margin: 20px 0;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+        
+        .ceremony-info {
+            margin: 20px 0;
+            padding: 25px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .ceremony-title {
+            font-family: var(--font-heading);
+            font-size: 32px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 30px 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .ceremony-title::before,
+        .ceremony-title::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+        }
+
+        .ceremony-title::before {
+            top: 0;
+        }
+
+        .ceremony-title::after {
+            bottom: 0;
+        }
+
+        .ceremony-title span {
+            display: block;
+            font-size: 24px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            color: var(--accent-color);
+        }
+
+        .ceremony-details {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--secondary-color);
+            font-size: 16px;
+        }
+
+        .detail-item i {
+            color: var(--accent-color);
+            width: 20px;
+        }
+        
+        .countdown {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .countdown-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            min-width: 100px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .countdown-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(
+                circle at center,
+                rgba(255,255,255,0.2) 0%,
+                transparent 70%
+            );
+            transform: scale(0);
+            animation: ripple 2s infinite;
+        }
+
+        @keyframes ripple {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(1); opacity: 0; }
+        }
+        
+        .countdown-number {
+            font-family: var(--font-heading);
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+        
+        .countdown-label {
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 8px;
+        }
+        
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px 0;
+            gap: 10px;
+        }
+        
+        .tab-button {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 12px 25px;
+            margin: 0 5px;
+            border: none;
+            background: none;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: all 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .tab-button.active {
+            border-bottom: 2px solid var(--gold);
+            color: var(--primary-color);
+        }
+        
+        .tab-button:hover {
+            background-color: rgba(0,0,0,0.05);
+            border-radius: 5px;
+        }
+        
+        .location {
+            font-size: 18px;
+            font-style: italic;
+            margin: 30px 0 15px;
+            color: var(--secondary-color);
+            line-height: 1.6;
+            padding: 20px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 10px;
+        }
+        
+        .map-container {
+            margin: 20px 0;
+            height: 300px;
+            background-color: #eee;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+            opacity: 0;
+        }
+        
+        .map-container:hover .map-overlay {
+            opacity: 1;
+            background-color: rgba(0,0,0,0.2);
+        }
+        
+        .map-text {
+            color: white;
+            background-color: rgba(0,0,0,0.6);
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 16px;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .map-container:hover .map-text {
+            transform: translateY(0);
+        }
+        
+        .social-share {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        .theme-selector {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .theme-selector:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+        }
+        
+        .theme-title {
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-align: center;
+            color: var(--primary-color);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .theme-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background: var(--gold);
+        }
+        
+        .theme-colors {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            padding: 5px;
+        }
+        
+        .theme-color {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .theme-color::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .theme-color:hover {
+            transform: scale(1.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .theme-color:hover::before {
+            opacity: 1;
+        }
+
+        .theme-color.active {
+            transform: scale(1.1);
+            box-shadow: 0 0 0 2px var(--gold), 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        .classic { 
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+        }
+        .royal { 
+            background: linear-gradient(135deg, #3d0c66, #6a0dad);
+        }
+        .golden { 
+            background: linear-gradient(135deg, #b8860b, #daa520);
+        }
+        .emerald { 
+            background: linear-gradient(135deg, #2e8b57, #3cb371);
+        }
+        .rose { 
+            background: linear-gradient(135deg, #bc8f8f, #deb887);
+        }
+        .ocean {
+            background: linear-gradient(135deg, #1a2980, #26d0ce);
+        }
+        .sunset {
+            background: linear-gradient(135deg, #ff512f, #dd2476);
+        }
+        .forest {
+            background: linear-gradient(135deg, #134e5e, #71b280);
+        }
+        .lavender {
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+                background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            }
+
+            .invitation {
+                padding: 20px 15px;
+                margin: 20px auto;
+                width: 95%;
+                border-radius: 15px;
+            }
+
+            .heading {
+                font-size: 28px;
+                letter-spacing: 6px;
+                margin-bottom: 20px;
+            }
+
+            .year {
+                margin: 20px 0;
+            }
+
+            .year span {
+                font-size: 32px;
+                padding: 0 10px;
+            }
+
+            .cap-icon {
+                width: 50px;
+                height: 50px;
+                margin: 0 10px;
+            }
+
+            .graduate-name {
+                font-size: 32px;
+                letter-spacing: 2px;
+                margin: 20px 0;
+            }
+
+            .major-info {
+                padding: 15px;
+                margin: 15px 0;
+            }
+
+            .major {
+                font-size: 20px;
+            }
+
+            .school {
+                font-size: 16px;
+            }
+
+            .ceremony-title {
+                font-size: 24px;
+                letter-spacing: 2px;
+                margin: 20px 0;
+            }
+
+            .ceremony-title span {
+                font-size: 18px;
+            }
+
+            .date-time {
+                font-size: 20px;
+                margin: 15px 0;
+            }
+
+            .countdown {
+                gap: 10px;
+                margin: 20px 0;
+            }
+
+            .countdown-item {
+                padding: 10px 15px;
+                min-width: 60px;
+            }
+
+            .countdown-number {
+                font-size: 24px;
+            }
+
+            .countdown-label {
+                font-size: 12px;
+            }
+
+            .tab-container {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .tab-button {
+                width: 100%;
+                padding: 10px;
+                margin: 2px 0;
+            }
+
+            .info-section {
+                padding: 15px;
+                margin: 15px 0;
+            }
+
+            .info-title {
+                font-size: 20px;
+            }
+
+            .info-item {
+                font-size: 14px;
+                gap: 10px;
+            }
+
+            .info-item i {
+                width: 16px;
+            }
+
+            .ceremony-time {
+                padding: 15px;
+                margin: 15px 0;
+            }
+
+            .date {
+                font-size: 18px;
+            }
+
+            .time {
+                font-size: 20px;
+            }
+
+            .map-container {
+                height: 200px;
+            }
+
+            .rsvp-form {
+                padding: 15px;
+            }
+
+            .form-group {
+                margin-bottom: 15px;
+            }
+
+            .form-group label {
+                font-size: 14px;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .submit-btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+            .social-share {
+                gap: 10px;
+                margin-top: 20px;
+            }
+
+            .social-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+
+            .theme-selector {
+                bottom: 10px;
+                right: 10px;
+                padding: 10px;
+            }
+
+            .theme-title {
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+
+            .theme-colors {
+                gap: 8px;
+            }
+
+            .theme-color {
+                width: 25px;
+                height: 25px;
+            }
+
+            .invite-message {
+                font-size: 20px;
+                padding: 0 10px;
+            }
+
+            .contact-info {
+                padding: 15px;
+                margin: 15px 0;
+            }
+
+            .contact-title {
+                font-size: 20px;
+            }
+
+            .contact-item {
+                font-size: 14px;
+            }
+
+            .divider {
+                margin: 20px auto;
+            }
+
+            .divider::before {
+                font-size: 16px;
+                padding: 0 15px;
+            }
+        }
+
+        /* Small phones */
+        @media (max-width: 360px) {
+            .invitation {
+                padding: 15px 10px;
+            }
+
+            .heading {
+                font-size: 24px;
+                letter-spacing: 4px;
+            }
+
+            .graduate-name {
+                font-size: 28px;
+            }
+
+            .countdown-item {
+                padding: 8px 12px;
+                min-width: 50px;
+            }
+
+            .countdown-number {
+                font-size: 20px;
+            }
+
+            .countdown-label {
+                font-size: 10px;
+            }
+
+            .info-item {
+                font-size: 12px;
+            }
+
+            .date {
+                font-size: 16px;
+            }
+
+            .time {
+                font-size: 18px;
+            }
+        }
+
+        .rsvp-toggle-btn {
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .rsvp-toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        .rsvp-form {
+            margin: 20px auto;
+            padding: 30px;
+            border-radius: 15px;
+            background-color: rgba(255,255,255,0.9);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 500px;
+            display: none;
+        }
+        
+        .rsvp-form.show {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--primary-color);
+            letter-spacing: 0.5px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 2px rgba(241, 196, 15, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .success-message {
+            color: #2e8b57;
+            margin-top: 15px;
+            font-weight: 500;
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .invite-message {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--primary-color);
+            line-height: 1.6;
+            letter-spacing: 0.5px;
+        }
+
+        .invite-message p {
+            margin: 5px 0;
+        }
+
+        .invite-message span {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .contact-info {
+            margin: 30px 0;
+            padding: 25px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .contact-title {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-item {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--secondary-color);
+        }
+
+        .contact-item i {
+            color: var(--accent-color);
+            width: 20px;
+        }
+
+        .info-section {
+            margin: 30px 0;
+            padding: 25px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .info-item {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.6;
+            letter-spacing: 0.3px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            color: var(--secondary-color);
+        }
+
+        .info-item i {
+            color: var(--accent-color);
+            width: 20px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .address-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .info-content {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            text-align: left;
+        }
+
+        .info-title {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .ceremony-time {
+            margin: 30px 0;
+            padding: 30px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .ceremony-time::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                45deg,
+                transparent 0%,
+                rgba(255,255,255,0.2) 50%,
+                transparent 100%
+            );
+            transform: translateX(-100%);
+            animation: shine 3s infinite;
+        }
+
+        .date {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .time {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 500;
+            color: var(--accent-color);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .submit-btn {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .tab-button {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .tab-button.active {
+            border-bottom: 2px solid var(--gold);
+            color: var(--primary-color);
+        }
+        
+        .tab-button:hover {
+            background-color: rgba(0,0,0,0.05);
+            border-radius: 5px;
+        }
+
+        .countdown {
+            margin: 40px 0;
+        }
+
+        .countdown-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            min-width: 100px;
+            transition: transform 0.3s ease;
+        }
+
+        .countdown-number {
+            font-family: var(--font-heading);
+            font-size: 36px;
+            font-weight: 600;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .countdown-label {
+            font-family: var(--font-body);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 8px;
+        }
+
+        /* Media Style - Creative & Dynamic */
+        .topic-media .invitation {
+            animation: mediaFadeIn 1.2s ease-out;
+        }
+
+        .topic-media .graduate-name {
+            animation: mediaGlow 3s infinite;
+        }
+
+        .topic-media .major-info {
+            animation: mediaSlideIn 1.2s ease-out 0.5s both;
+        }
+
+        .topic-media .countdown-item {
+            animation: mediaBounce 1.5s infinite;
+        }
+
+        @keyframes mediaFadeIn {
+            from { 
+                opacity: 0;
+                filter: blur(20px) brightness(1.5);
+                transform: scale(1.1);
+            }
+            to { 
+                opacity: 1;
+                filter: blur(0) brightness(1);
+                transform: scale(1);
+            }
+        }
+
+        @keyframes mediaGlow {
+            0% { 
+                text-shadow: 0 0 10px rgba(255,255,255,0.5),
+                            0 0 20px rgba(255,255,255,0.3),
+                            0 0 30px rgba(255,255,255,0.2);
+            }
+            50% { 
+                text-shadow: 0 0 20px rgba(255,255,255,0.8),
+                            0 0 30px rgba(255,255,255,0.5),
+                            0 0 40px rgba(255,255,255,0.3);
+            }
+            100% { 
+                text-shadow: 0 0 10px rgba(255,255,255,0.5),
+                            0 0 20px rgba(255,255,255,0.3),
+                            0 0 30px rgba(255,255,255,0.2);
+            }
+        }
+
+        @keyframes mediaSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-100px) rotate(-10deg) scale(0.8);
+                filter: blur(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) rotate(0) scale(1);
+                filter: blur(0);
+            }
+        }
+
+        @keyframes mediaBounce {
+            0%, 100% { 
+                transform: translateY(0) scale(1);
+                box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            }
+            50% { 
+                transform: translateY(-15px) scale(1.05);
+                box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            }
+        }
+
+        /* Tech Style - Modern & Technical */
+        .topic-tech .invitation {
+            animation: techFadeIn 1s ease-out;
+        }
+
+        .topic-tech .graduate-name {
+            animation: techTypewriter 2.5s steps(40) 0.5s both;
+        }
+
+        .topic-tech .major-info {
+            animation: techScan 1.5s ease-out 1s both;
+        }
+
+        .topic-tech .countdown-item {
+            animation: techPulse 2s infinite;
+        }
+
+        @keyframes techFadeIn {
+            from { 
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+                filter: brightness(1.5) contrast(1.2);
+            }
+            to { 
+                opacity: 1;
+                transform: scale(1) translateY(0);
+                filter: brightness(1) contrast(1);
+            }
+        }
+
+        @keyframes techTypewriter {
+            from { 
+                width: 0;
+                border-right: 3px solid var(--accent-color);
+                text-shadow: 0 0 10px var(--accent-color);
+            }
+            to { 
+                width: 100%;
+                border-right: none;
+                text-shadow: none;
+            }
+        }
+
+        @keyframes techScan {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+                box-shadow: 0 0 0 rgba(52, 152, 219, 0);
+                filter: brightness(1.5);
+            }
+            50% {
+                opacity: 0.5;
+                transform: translateY(10px);
+                box-shadow: 0 0 30px rgba(52, 152, 219, 0.5);
+                filter: brightness(1.2);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+                box-shadow: 0 0 20px rgba(52, 152, 219, 0.3);
+                filter: brightness(1);
+            }
+        }
+
+        @keyframes techPulse {
+            0% { 
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.4);
+                filter: brightness(1);
+            }
+            50% { 
+                transform: scale(1.05);
+                box-shadow: 0 0 20px 5px rgba(52, 152, 219, 0.6);
+                filter: brightness(1.2);
+            }
+            100% { 
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(52, 152, 219, 0);
+                filter: brightness(1);
+            }
+        }
+
+        /* Custom Cursor with Glitter Effect */
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            mix-blend-mode: difference;
+            z-index: 9999;
+            transition: transform 0.2s ease;
+            display: block !important;
+        }
+
+        .custom-cursor-dot {
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            display: block !important;
+        }
+
+        .cursor-trail {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            display: block !important;
+        }
+
+        .glitter {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: transparent;
+            pointer-events: none;
+            animation: glitterFall 1.5s ease-out forwards;
+            z-index: 9999;
+            display: block !important;
+        }
+
+        .glitter::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 215, 0, 1) 50%,
+                rgba(255, 255, 255, 1) 100%
+            );
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            animation: glitterRotate 1s linear infinite;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+        }
+
+        @keyframes glitterFall {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(150px) rotate(720deg) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        @keyframes glitterRotate {
+            0% {
+                transform: rotate(0deg) scale(1);
+            }
+            50% {
+                transform: rotate(180deg) scale(1.2);
+            }
+            100% {
+                transform: rotate(360deg) scale(1);
+            }
+        }
+
+        .custom-cursor.active {
+            transform: scale(2);
+            background: var(--gold);
+        }
+    </style>
+</head>
+<body>
+    <div class="invitation">
+        <div class="heading">GRADUATE</div>
+        
+        <div class="year">
+            <span>20</span>
+            <svg class="cap-icon" viewBox="0 0 100 100">
+                <path d="M95,40L50,20L5,40L50,60L95,40z" fill="currentColor"/>
+                <path d="M30,45v20c0,0,10,10,20,10s20-10,20-10V45L50,55L30,45z" fill="currentColor"/>
+                <rect x="45" y="10" width="10" height="30" fill="currentColor"/>
+                <path d="M50,10c0,0-5,5-5,10h10C55,15,50,10,50,10z" fill="currentColor"/>
+            </svg>
+            <span>25</span>
+        </div>
+        
+        <div class="graduate-name" id="graduateName">HOÀNG VĂN TÚ</div>
+        
+        <div class="ceremony-title">
+            LỄ TỐT NGHIỆP
+            <span>Khóa 2021 - 2025</span>
+        </div>
+        
+        <div class="major-info">
+            <div class="major">Cử nhân Thương Mại Điện Tử</div>
+            <div class="school">Trường đại học Công nghệ thông tin - ĐHQG TP HCM</div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="invite-message">
+            <p>Kính mời <span id="guestName">Quý khách</span></p>
+            <p>đến tham dự lễ tốt nghiệp của Tú</p>
+        </div>
+        
+        <div class="ceremony-time">
+            <div class="date">Thứ Bảy, ngày 07 tháng 06 năm 2025</div>
+            <div class="time">10:30 - 11:30</div>
+        </div>
+
+        
+        <div class="countdown">
+            <div class="countdown-item">
+                <div class="countdown-number" id="countdown-days">0</div>
+                <div class="countdown-label">Ngày</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="countdown-hours">0</div>
+                <div class="countdown-label">Giờ</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="countdown-minutes">0</div>
+                <div class="countdown-label">Phút</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="countdown-seconds">0</div>
+                <div class="countdown-label">Giây</div>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="tab-container">
+            <button class="tab-button active" onclick="openTab('info')">Thông tin</button>
+            <button class="tab-button" onclick="openTab('location')">Bản đồ</button>
+            <button class="tab-button" onclick="openTab('rsvp')">Xác nhận tham dự</button>
+        </div>
+        
+        <div id="info-tab">
+            <div class="info-section">
+                <div class="info-title">Địa điểm</div>
+                <div class="info-content">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="address-text">
+                            <div>Đại học Công Nghệ Thông Tin - ĐH Quốc Gia TP.HCM</div>
+                            <div>Đường Hàn Thuyên, khu phố 6 P, Thủ Đức, Hồ Chí Minh</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-building"></i>
+                        <span>Hội trường A - UIT</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <div class="info-title">Thông tin liên hệ</div>
+                <div class="info-content">
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <span>0396 445 010</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>hoangtu4520031234@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="location-tab" style="display: none;">
+            <div class="map-container" onclick="openMap()">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.231914012087!2d106.80081131533447!3d10.86980398930277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317527587e9ad5bf%3A0xafa66f9c8be3c91!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVGjDtG5nIHRpbiAtIMSQSFFH!5e0!3m2!1svi!2s!4v1647881234567!5m2!1svi!2s" 
+                    width="600" 
+                    height="200" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+                <div class="map-overlay">
+                    <div class="map-text"><i class="fas fa-map-marker-alt"></i> Xem bản đồ</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="rsvp-tab" style="display: none;">
+            <button onclick="toggleRSVP()" class="rsvp-toggle-btn">Xác nhận tham dự</button>
+            
+            <div class="rsvp-form" id="rsvp-form">
+                <div class="form-group">
+                    <label for="guest-name">Họ và tên</label>
+                    <input type="text" id="guest-name" placeholder="Nhập tên của bạn">
+                </div>
+                <div class="form-group">
+                    <label for="guest-email">Email</label>
+                    <input type="email" id="guest-email" placeholder="Email liên hệ">
+                </div>
+                <div class="form-group">
+                    <label for="guest-attendance">Bạn sẽ tham dự?</label>
+                    <select id="guest-attendance">
+                        <option value="yes">Có, tôi sẽ tham dự</option>
+                        <option value="no">Không, tôi không thể tham dự</option>
+                        <option value="maybe">Tôi chưa chắc chắn</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="guest-count">Số người tham dự</label>
+                    <select id="guest-count">
+                        <option value="1">1 người</option>
+                        <option value="2">2 người</option>
+                        <option value="3">3 người</option>
+                        <option value="4">4 người</option>
+                        <option value="5">5 người</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="guest-message">Lời nhắn</label>
+                    <textarea id="guest-message" placeholder="Để lại lời nhắn của bạn..."></textarea>
+                </div>
+                <button onclick="submitRSVP()" class="submit-btn">Gửi</button>
+                <div class="success-message" id="rsvp-success">Cảm ơn bạn đã xác nhận tham dự!</div>
+            </div>
+        </div>
+        
+        <div class="social-share">
+            <a href="#" onclick="shareOnFacebook(); return false;" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" onclick="shareOnTwitter(); return false;" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" onclick="shareOnWhatsapp(); return false;" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" onclick="shareByEmail(); return false;" class="social-icon email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+    
+    <div class="theme-selector">
+        <div class="theme-title">Chọn chủ đề</div>
+        <div class="theme-colors">
+            <div class="theme-color classic active" onclick="changeTheme('classic')"></div>
+            <div class="theme-color royal" onclick="changeTheme('royal')"></div>
+            <div class="theme-color golden" onclick="changeTheme('golden')"></div>
+            <div class="theme-color emerald" onclick="changeTheme('emerald')"></div>
+            <div class="theme-color rose" onclick="changeTheme('rose')"></div>
+            <div class="theme-color ocean" onclick="changeTheme('ocean')"></div>
+            <div class="theme-color sunset" onclick="changeTheme('sunset')"></div>
+            <div class="theme-color forest" onclick="changeTheme('forest')"></div>
+            <div class="theme-color lavender" onclick="changeTheme('lavender')"></div>
+        </div>
+    </div>
+
+    <script>
+        // Get parameters from URL
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // Set guest name if provided
+            const guestName = urlParams.get('guest');
+            if (guestName) {
+                document.getElementById('guestName').textContent = guestName;
+            }
+            
+            // Set graduate name if provided
+            const graduateName = urlParams.get('graduate');
+            if (graduateName) {
+                document.getElementById('graduateName').textContent = graduateName.toUpperCase();
+            }
+            
+            // Set topic if provided (default is business)
+            const topic = urlParams.get('topic') || 'business';
+            document.body.classList.add('topic-' + topic);
+            
+            // Start countdown
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+            
+            // Get theme if present
+            const theme = urlParams.get('theme');
+            if (theme) {
+                changeTheme(theme);
+            }
+        }
+        
+        // Countdown function
+        function updateCountdown() {
+            const graduationDate = new Date('June 7, 2025 10:30:00').getTime();
+            const now = new Date().getTime();
+            const timeLeft = graduationDate - now;
+            
+            if (timeLeft < 0) {
+                document.getElementById('countdown-days').textContent = '0';
+                document.getElementById('countdown-hours').textContent = '0';
+                document.getElementById('countdown-minutes').textContent = '0';
+                document.getElementById('countdown-seconds').textContent = '0';
+                return;
+            }
+            
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown-days').textContent = days;
+            document.getElementById('countdown-hours').textContent = hours;
+            document.getElementById('countdown-minutes').textContent = minutes;
+            document.getElementById('countdown-seconds').textContent = seconds;
+        }
+        
+        // Tab switching function
+        function openTab(tabName) {
+            const tabContents = document.querySelectorAll('[id$="-tab"]');
+            tabContents.forEach(tab => {
+                tab.style.display = 'none';
+            });
+            
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            document.getElementById(tabName + '-tab').style.display = 'block';
+            event.currentTarget.classList.add('active');
+        }
+        
+        // Toggle RSVP form
+        function toggleRSVP() {
+            const rsvpForm = document.getElementById('rsvp-form');
+            rsvpForm.classList.toggle('show');
+            
+            const button = document.querySelector('.rsvp-toggle-btn');
+            if (rsvpForm.classList.contains('show')) {
+                button.textContent = 'Ẩn biểu mẫu';
+            } else {
+                button.textContent = 'Xác nhận tham dự';
+            }
+        }
+        
+        // Submit RSVP form
+        function submitRSVP() {
+            const name = document.getElementById('guest-name').value;
+            const email = document.getElementById('guest-email').value;
+            
+            if (!name || !email) {
+                alert('Vui lòng điền tên và email của bạn.');
+                return;
+            }
+            
+            // In a real application, you would send this data to a server
+            console.log({
+                name: name,
+                email: email,
+                attendance: document.getElementById('guest-attendance').value,
+                guestCount: document.getElementById('guest-count').value,
+                message: document.getElementById('guest-message').value
+            });
+            
+            // Show success message
+            document.getElementById('rsvp-success').style.display = 'block';
+            
+            // Reset form
+            setTimeout(() => {
+                document.getElementById('guest-name').value = '';
+                document.getElementById('guest-email').value = '';
+                document.getElementById('guest-message').value = '';
+                document.getElementById('guest-attendance').selectedIndex = 0;
+                document.getElementById('guest-count').selectedIndex = 0;
+            }, 3000);
+        }
+        
+        // Open map in new tab
+        function openMap() {
+            window.open('https://www.google.com/maps?q=10.8698,106.8034&z=15&t=m', '_blank');
+        }
+        
+        // Social sharing functions
+        function shareOnFacebook() {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent('Lời mời tốt nghiệp của ' + document.getElementById('graduateName').textContent);
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + url + '&quote=' + title, '_blank');
+        }
+        
+        function shareOnTwitter() {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent('Tham dự lễ tốt nghiệp của ' + document.getElementById('graduateName').textContent);
+            window.open('https://twitter.com/intent/tweet?url=' + url + '&text=' + text, '_blank');
+        }
+        
+        function shareOnWhatsapp() {
+            const url = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent('Tham dự lễ tốt nghiệp của ' + document.getElementById('graduateName').textContent);
+            window.open('https://wa.me/?text=' + text + '%20' + url, '_blank');
+        }
+        
+        function shareByEmail() {
+            const subject = encodeURIComponent('Lời mời tốt nghiệp của ' + document.getElementById('graduateName').textContent);
+            const body = encodeURIComponent('Tham dự lễ tốt nghiệp của ' + document.getElementById('graduateName').textContent + '\n\n' + window.location.href);
+            window.location.href = 'mailto:?subject=' + subject + '&body=' + body;
+        }
+        
+        // Theme changing function
+        function changeTheme(theme) {
+            const root = document.documentElement;
+            const themeColors = document.querySelectorAll('.theme-color');
+            
+            // Remove active class from all themes
+            themeColors.forEach(color => color.classList.remove('active'));
+            // Add active class to selected theme
+            document.querySelector(`.theme-color.${theme}`).classList.add('active');
+
+            switch(theme) {
+                case 'royal':
+                    root.style.setProperty('--primary-color', '#3d0c66');
+                    root.style.setProperty('--secondary-color', '#6a0dad');
+                    root.style.setProperty('--accent-color', '#8e44ad');
+                    break;
+                case 'golden':
+                    root.style.setProperty('--primary-color', '#b8860b');
+                    root.style.setProperty('--secondary-color', '#daa520');
+                    root.style.setProperty('--accent-color', '#f1c40f');
+                    break;
+                case 'emerald':
+                    root.style.setProperty('--primary-color', '#2e8b57');
+                    root.style.setProperty('--secondary-color', '#3cb371');
+                    root.style.setProperty('--accent-color', '#27ae60');
+                    break;
+                case 'rose':
+                    root.style.setProperty('--primary-color', '#bc8f8f');
+                    root.style.setProperty('--secondary-color', '#deb887');
+                    root.style.setProperty('--accent-color', '#d2b48c');
+                    break;
+                case 'ocean':
+                    root.style.setProperty('--primary-color', '#1a2980');
+                    root.style.setProperty('--secondary-color', '#26d0ce');
+                    root.style.setProperty('--accent-color', '#3498db');
+                    break;
+                case 'sunset':
+                    root.style.setProperty('--primary-color', '#ff512f');
+                    root.style.setProperty('--secondary-color', '#dd2476');
+                    root.style.setProperty('--accent-color', '#e74c3c');
+                    break;
+                case 'forest':
+                    root.style.setProperty('--primary-color', '#134e5e');
+                    root.style.setProperty('--secondary-color', '#71b280');
+                    root.style.setProperty('--accent-color', '#2ecc71');
+                    break;
+                case 'lavender':
+                    root.style.setProperty('--primary-color', '#8e44ad');
+                    root.style.setProperty('--secondary-color', '#9b59b6');
+                    root.style.setProperty('--accent-color', '#a29bfe');
+                    break;
+                default: // classic
+                    root.style.setProperty('--primary-color', '#2c3e50');
+                    root.style.setProperty('--secondary-color', '#34495e');
+                    root.style.setProperty('--accent-color', '#3498db');
+            }
+            
+            // Update URL with the new theme parameter
+            const url = new URL(window.location);
+            url.searchParams.set('theme', theme);
+            window.history.pushState({}, '', url);
+        }
+
+        // Enhanced Custom Cursor with Glitter Effect
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create cursor elements
+            const cursor = document.createElement('div');
+            cursor.className = 'custom-cursor';
+            document.body.appendChild(cursor);
+
+            const cursorDot = document.createElement('div');
+            cursorDot.className = 'custom-cursor-dot';
+            document.body.appendChild(cursorDot);
+
+            const trail = document.createElement('div');
+            trail.className = 'cursor-trail';
+            document.body.appendChild(trail);
+
+            let lastX = 0;
+            let lastY = 0;
+            let glitterInterval;
+
+            // Update cursor position
+            document.addEventListener('mousemove', function(e) {
+                cursor.style.left = e.clientX - 10 + 'px';
+                cursor.style.top = e.clientY - 10 + 'px';
+                cursorDot.style.left = e.clientX - 2 + 'px';
+                cursorDot.style.top = e.clientY - 2 + 'px';
+
+                lastX = e.clientX;
+                lastY = e.clientY;
+
+                // Create glitter on move
+                if (Math.random() > 0.7) { // 30% chance to create glitter
+                    createGlitter(e.clientX, e.clientY);
+                }
+            });
+
+            function createGlitter(x, y) {
+                const glitter = document.createElement('div');
+                glitter.className = 'glitter';
+                glitter.style.left = x + 'px';
+                glitter.style.top = y + 'px';
+                
+                // Random rotation and scale
+                const rotation = Math.random() * 360;
+                const scale = 0.8 + Math.random() * 0.8;
+                glitter.style.transform = `rotate(${rotation}deg) scale(${scale})`;
+                
+                trail.appendChild(glitter);
+                setTimeout(() => glitter.remove(), 1500);
+            }
+
+            // Click effect
+            document.addEventListener('mousedown', function() {
+                cursor.classList.add('active');
+                // Create burst of glitter on click
+                for (let i = 0; i < 30; i++) {
+                    const angle = (i / 30) * Math.PI * 2;
+                    const distance = 40;
+                    const x = lastX + Math.cos(angle) * distance;
+                    const y = lastY + Math.sin(angle) * distance;
+                    createGlitter(x, y);
+                }
+            });
+
+            document.addEventListener('mouseup', function() {
+                cursor.classList.remove('active');
+            });
+
+            // Hover effects
+            const interactiveElements = document.querySelectorAll('a, button, .countdown-item, .major-info, .graduate-name');
+            interactiveElements.forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    cursor.style.transform = 'scale(1.5)';
+                });
+                element.addEventListener('mouseleave', function() {
+                    cursor.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
